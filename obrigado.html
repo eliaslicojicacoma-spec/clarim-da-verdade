@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado — Clube O País</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --vermelho: #C8102E;
+      --preto: #0A0A0A;
+      --dourado: #D4A017;
+      --branco: #F5F0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: 'Barlow', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 2rem;
+    }
+    .logo span { color: var(--vermelho); }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    h1 span { color: var(--vermelho); }
+    p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: #aaa;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    a {
+      display: inline-block;
+      padding: 12px 32px;
+      background: var(--vermelho);
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    a:hover { background: #a50d25; }
+  </style>
+</head>
+<body>
+  <p class="logo"><span>O</span> País</p>
+  <h1>Pré-inscrição <span>recebida!</span></h1>
+  <p>Obrigado por quereres fazer parte da família. Vamos entrar em contacto contigo em breve com todos os detalhes.</p>
+  <a href="index.html">Voltar ao site</a>
+</body>
+</html>
