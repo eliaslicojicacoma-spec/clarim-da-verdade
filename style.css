@@ -1,0 +1,227 @@
+/* =====================
+   VARIÁVEIS GLOBAIS
+   ===================== */
+:root {
+  --vermelho: #C8102E;
+  --preto: #0A0A0A;
+  --cinza: #111;
+  --dourado: #D4A017;
+  --branco: #F5F0E8;
+}
+
+/* =====================
+   RESET E BASE
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--preto);
+  color: var(--branco);
+  font-family: 'Barlow', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================
+   NAVEGAÇÃO
+   ===================== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  position: sticky;
+  top: 0;
+  background: var(--preto);
+  z-index: 100;
+  border-bottom: 1px solid #222;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--branco);
+}
+
+.nav-logo span {
+  color: var(--vermelho);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--branco);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--vermelho);
+}
+
+/* Botão hambúrguer — escondido em desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--branco);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animação X quando menu está aberto */
+nav.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+nav.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+nav.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================
+   HERO
+   ===================== */
+#hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+#hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+#hero h1 span {
+  color: var(--vermelho);
+}
+
+#hero p {
+  margin-top: 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dourado);
+}
+
+/* =====================
+   NEWSLETTER
+   ===================== */
+#newsletter {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--cinza);
+}
+
+#newsletter h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+#newsletter p {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+}
+
+#newsletter form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#newsletter input[type="email"] {
+  padding: 10px 16px;
+  width: 260px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: var(--branco);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#newsletter input[type="email"]:focus {
+  border-color: var(--vermelho);
+}
+
+#newsletter button[type="submit"] {
+  padding: 10px 20px;
+  background: var(--vermelho);
+  color: white;
+  border: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#newsletter button[type="submit"]:hover {
+  background: #a50d25;
+}
+
+#newsletterMsg {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+/* =====================
+   MOBILE
+   ===================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--preto);
+    padding: 1rem 2rem;
+    border-top: 1px solid #222;
+    gap: 1rem;
+  }
+
+  nav.menu-open .nav-links {
+    display: flex;
+  }
+}
