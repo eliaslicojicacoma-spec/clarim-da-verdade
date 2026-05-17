@@ -3,8 +3,9 @@ const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
+document.addEventListener('mousemove', (e) => {
+  mx = e.clientX;
+  my = e.clientY;
   cursor.style.left = mx + 'px';
   cursor.style.top = my + 'px';
 });
@@ -18,7 +19,7 @@ function animateCursorRing() {
 }
 animateCursorRing();
 
-document.querySelectorAll('a, button, .valor-card, .actividade-card').forEach(el => {
+document.querySelectorAll('a, button, .valor-card, .actividade-card').forEach((el) => {
   el.addEventListener('mouseenter', () => {
     cursor.classList.add('hover');
     cursorRing.classList.add('hover');
@@ -36,18 +37,25 @@ window.addEventListener('scroll', () => {
 });
 
 // SCROLL REVEAL
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  },
+  { threshold: 0.1 }
+);
 
-document.querySelectorAll('.reveal, .stat-item, .valor-card').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal, .stat-item, .valor-card').forEach((el) => observer.observe(el));
 
 // COUNTER ANIMATION
 function animateCounter(el, target, isYear) {
-  if (isYear) { el.textContent = target; return; }
-  let duration = 2000, startTime = null;
+  if (isYear) {
+    el.textContent = target;
+    return;
+  }
+  const duration = 2000;
+  let startTime = null;
 
   function step(timestamp) {
     if (!startTime) startTime = timestamp;
@@ -59,35 +67,39 @@ function animateCounter(el, target, isYear) {
   requestAnimationFrame(step);
 }
 
-const statObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
+const statObs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        const nums = e.target.querySelectorAll('.stat-num[data-target]');
+        nums.forEach((n) => {
+          const t = parseInt(n.dataset.target, 10);
+          const isYear = t > 100;
+          animateCounter(n, t, isYear);
+        });
+        statObs.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
 
-      const nums = e.target.querySelectorAll('.stat-num[data-target]');
-      nums.forEach(n => {
-        const t = parseInt(n.dataset.target, 10);
-        const isYear = t > 100;
-        animateCounter(n, t, isYear);
-      });
+document.querySelectorAll('#stats').forEach((el) => statObs.observe(el));
 
-      statObs.unobserve(e.target);
-    }
+// FORMULÁRIO (TOAST)
+const submitBtn = document.getElementById('submitBtn');
+if (submitBtn) {
+  submitBtn.addEventListener('click', () => {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
   });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('#stats').forEach(el => statObs.observe(el));
-
-// FORMULÁRIO
-document.getElementById('submitBtn').addEventListener('click', () => {
-  const toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4000);
-});
+}
 
 // SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.querySelector(a.getAttribute('href'));
     if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -96,6 +108,36 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // VALOR CARDS DELAY
 document.querySelectorAll('.valor-card').forEach((card, i) => {
-  card.style.transitionDelay = (i * 0.08) + 's';
+  card.style.transitionDelay = i * 0.08 + 's';
 });
 
+// MOBILE NAV TOGGLE
+const navToggle = document.getElementById('navToggle');
+
+if (navToggle && navbar) {
+  navToggle.addEventListener('click', () => {
+    const open = navbar.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  });
+
+  // fecha ao clicar num link
+  document.querySelectorAll('.nav-links a').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (navbar.classList.contains('menu-open')) {
+        navbar.classList.remove('menu-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menu');
+      }
+    });
+  });
+
+  // fecha com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navbar.classList.contains('menu-open')) {
+      navbar.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menu');
+    }
+  });
+}
