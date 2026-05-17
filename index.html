@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O País — Clube de Motas do Moxico</title>
+
+  https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:ital,wght@0,300;0,400;1,300&display=swap
+  style.css
+</head>
+
+<body>
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Barra de Angola no topo -->
+  <div class="angola-strip"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    #hero
+      <div class="badge"></div>
+      <span>O</span> País
+    </a>
+    <ul class="nav-links">
+      <li>#sobreSobre</a></li>
+      <li>#valoresValores</a></li>
+      <li>#actividadesActividades</a></li>
+      <li>#adesaoAderir</a></li>
+      <li>#adesaoContacto</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Clube de Motas · Moxico · Angola</div>
+      <h1 class="hero-title">
+        Clube<br />
+        <em>O País</em>
+      </h1>
+      <div class="hero-linha"></div>
+      <p class="hero-sub">
+        Mais do que andar de mota — somos uma irmandade comprometida em valorizar as riquezas culturais, naturais e históricas de Angola.
+      </p>
+      <div class="hero-ctas">
+        #adesaoTornar-me Membro</a>
+        #sobreConhecer o Clube</a>
+      </div>
+    </div>
+
+    <!-- Moto SVG -->
+    <div class="hero-moto">
+      <svg viewBox="0 0 700 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Roda traseira -->
+        <circle cx="160" cy="320" r="90" stroke="#333" stroke-width="8" fill="none"/>
+        <circle cx="160" cy="320" r="70" stroke="#222" stroke-width="4" fill="none"/>
+        <circle cx="160" cy="320" r="20" fill="#1a1a1a" stroke="#C8102E" stroke-width="3"/>
+        <!-- Raios traseiros -->
+        <line x1="160" y1="250" x2="160" y2="230" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="160" y1="390" x2="160" y2="410" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="90" y1="320" x2="70" y2="320" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="230" y1="320" x2="250" y2="320" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="111" y1="271" x2="97" y2="257" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="209" y1="369" x2="223" y2="383" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="111" y1="369" x2="97" y2="383" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="209" y1="271" x2="223" y2="257" stroke="#2a2a2a" stroke-width="2"/>
+
+        <!-- Roda dianteira -->
+        <circle cx="540" cy="320" r="90" stroke="#333" stroke-width="8" fill="none"/>
+        <circle cx="540" cy="320" r="70" stroke="#222" stroke-width="4" fill="none"/>
+        <circle cx="540" cy="320" r="20" fill="#1a1a1a" stroke="#C8102E" stroke-width="3"/>
+        <!-- Raios dianteiros -->
+        <line x1="540" y1="250" x2="540" y2="230" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="540" y1="390" x2="540" y2="410" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="470" y1="320" x2="450" y2="320" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="610" y1="320" x2="630" y2="320" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="491" y1="271" x2="477" y2="257" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="589" y1="369" x2="603" y2="383" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="491" y1="369" x2="477" y2="383" stroke="#2a2a2a" stroke-width="2"/>
+        <line x1="589" y1="271" x2="603" y2="257" stroke="#2a2a2a" stroke-width="2"/>
+
+        <!-- Quadro principal -->
+        <path d="M240 300 L200 230 L300 200 L420 220 L460 300 Z" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+        <!-- Tanque -->
+        <path d="M300 200 L420 220 L410 170 L320 155 Z" fill="#C8102E" stroke="#8B0B1F" stroke-width="2"/>
+        <!-- Detalhe dourado no tanque -->
+        <path d="M320 175 L400 188 L398 170 L322 158 Z" fill="#D4A017" opacity="0.6"/>
+        <!-- Farol dianteiro -->
+        <ellipse cx="530" cy="260" rx="18" ry="14" fill="#222" stroke="#D4A017" stroke-width="2"/>
+        <ellipse cx="530" cy="260" rx="10" ry="8" fill="#D4A017" opacity="0.5"/>
+        <!-- Guidão -->
+        <path d="M490 210 Q510 190 540 195 Q560 195 570 210" stroke="#444" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Selim -->
+        <path d="M300 200 Q350 180 420 200" stroke="#D4A017" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <!-- Motor -->
+        <rect x="250" y="260" width="100" height="60" rx="5" fill="#1E1E1E" stroke="#333" stroke-width="2"/>
+        <rect x="265" y="275" width="30" height="30" rx="3" fill="#252525"/>
+        <rect x="305" y="275" width="30" height="30" rx="3" fill="#252525"/>
+        <!-- Escape -->
+        <path d="M250 290 Q200 310 190 330 Q185 345 160 345" stroke="#444" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Forqueta dianteira -->
+        <path d="M470 220 L510 290 L540 295" stroke="#333" stroke-width="5" fill="none"/>
+        <path d="M490 210 L525 285 L540 295" stroke="#2a2a2a" stroke-width="5" fill="none"/>
+        <!-- Corrente -->
+        <path d="M240 320 Q300 340 360 320" stroke="#333" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+        <!-- Logo no tanque -->
+        <text x="345" y="195" font-family="serif" font-size="14" fill="white" font-weight="bold" text-anchor="middle" opacity="0.8">O PAÍS</text>
+
+        <!-- Pneus (espessura) -->
+        <circle cx="160" cy="320" r="90" stroke="#1a1a1a" stroke-width="16" fill="none" opacity="0.4"/>
+        <circle cx="540" cy="320" r="90" stroke="#1a1a1a" stroke-width="16" fill="none" opacity="0.4"/>
+
+        <!-- Reflexo no chão -->
+        <ellipse cx="350" cy="415" rx="200" ry="12" fill="rgba(200,16,46,0.08)"/>
+      </svg>
+    </div>
+
+    <div class="hero-lema">UM SÓ POVO · UMA SÓ NAÇÃO · MOXICO · ANGOLA</div>
+  </section>
+
+  <div class="linha-deco"></div>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num" data-target="5">0</span>
+        <span class="stat-label">Membros Fundadores</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="2024">—</span>
+        <span class="stat-label">Ano de Fundação</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1">0</span>
+        <span class="stat-label">Província · Moxico</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="18">0</span>
+        <span class="stat-label">Províncias a Explorar</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="linha-deco"></div>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="sobre-texto reveal">
+      <div class="section-label">Sobre o Clube</div>
+      <h2 class="section-title">Uma irmandade<br><span>sobre rodas</span></h2>
+      <p>
+        O clube <strong>"O País"</strong> nasceu com o objectivo de unir motoqueiros da Província do Moxico que partilham valores desportivos e interesses em comum, promovendo o respeito, lealdade, amizade e irmandade.
+      </p>
+      <p>
+        Mais do que andar de mota, o clube representa uma <strong>equipe comprometida</strong> em contribuir para o desenvolvimento do desporto e turismo na província, deixando de ser apenas um grupo para se tornar numa <strong>ferramenta criativa</strong> que desperta curiosidades e valoriza as riquezas culturais, naturais e históricas de Angola.
+      </p>
+      <p>
+        No "País", acreditamos que a união faz a força e que <strong>nenhum motoqueiro deve caminhar sozinho</strong>.
+      </p>
+    </div>
+
+    <div class="sobre-visual reveal" style="transition-delay:0.2s">
+      <div class="sobre-deco"></div>
+      <div class="sobre-card">
+        <blockquote>
+          "No País, acreditamos que a união faz a força e que nenhum motoqueiro deve caminhar sozinho."
+        </blockquote>
+        <cite>— Estatuto Oficial do Clube, Preâmbulo</cite>
+      </div>
+    </div>
+  </section>
+
+  <div class="linha-deco"></div>
+
+  <!-- VALORES -->
+  <section id="valores">
+    <div class="valores-header reveal">
+      <div class="section-label" style="justify-content:center; max-width:300px; margin:0 auto 1rem">Os nossos pilares</div>
+      <h2 class="section-title" style="text-align:center">Os Valores<br><span>do Clube</span></h2>
+    </div>
+
+    <div class="valores-grid">
+      <div class="valor-card">
+        <span class="valor-num">01</span>
+        <span class="valor-icon">🤝</span>
+        <div class="valor-titulo">Respeito</div>
+        <p class="valor-desc">Tratamos cada membro, visitante e comunidade com a dignidade e consideração que merecem.</p>
+      </div>
+      <div class="valor-card">
+        <span class="valor-num">02</span>
+        <span class="valor-icon">🛡️</span>
+        <div class="valor-titulo">Lealdade</div>
+        <p class="valor-desc">Estamos lado a lado nas estradas e na vida. A nossa palavra é o nosso compromisso.</p>
+      </div>
+      <div class="valor-card">
+        <span class="valor-num">03</span>
+        <span class="valor-icon">🔥</span>
+        <div class="valor-titulo">Amizade</div>
+        <p class="valor-desc">Os laços criados na estrada são para a vida. O clube é família, antes de ser um grupo de motas.</p>
+      </div>
+      <div class="valor-card">
+        <span class="valor-num">04</span>
+        <span class="valor-icon">🌍</span>
+        <div class="valor-titulo">Irmandade</div>
+        <p class="valor-desc">Independentemente de origem, profissão ou percurso — aqui somos todos irmãos do mesmo caminho.</p>
+      </div>
+      <div class="valor-card">
+        <span class="valor-num">05</span>
+        <span class="valor-icon">🏆</span>
+        <div class="valor-titulo">Desporto</div>
+        <p class="valor-desc">Promovemos a prática motociclista responsável e o desporto como motor de desenvolvimento provincial.</p>
+      </div>
+      <div class="valor-card">
+        <span class="valor-num">06</span>
+        <span class="valor-icon">🇦🇴</span>
+        <div class="valor-titulo">Angolaneidade</div>
+        <p class="valor-desc">Valorizamos e divulgamos as riquezas culturais, históricas e naturais de Angola por onde passamos.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="linha-deco"></div>
+
+  <!-- ACTIVIDADES -->
+  <section id="actividades">
+    <div class="actividades-header reveal">
+      <div class="section-label">O que fazemos</div>
+      <h2 class="section-title">Actividades<br><span>& Eventos</span></h2>
+    </div>
+
+    <div class="actividades-grid">
+      <div class="actividade-card reveal">
+        <div class="act-img">
+          🗺️
+          <div class="act-img-bg r"></div>
+        </div>
+        <div class="act-overlay"></div>
+        <div class="act-content">
+          <span class="act-tag">Aventura</span>
+          <div class="act-titulo">Passeios & Rotas</div>
+          <p class="act-desc">Exploramos a Província do Moxico e Angola, descobrindo paisagens únicas e patrimónios escondidos.</p>
+        </div>
+      </div>
+
+      <div class="actividade-card reveal" style="transition-delay:0.1s">
+        <div class="act-img">
+          🏁
+          <div class="act-img-bg g"></div>
+        </div>
+        <div class="act-overlay"></div>
+        <div class="act-content">
+          <span class="act-tag">Competição</span>
+          <div class="act-titulo">Eventos Desportivos</div>
+          <p class="act-desc">Organizamos e participamos em rallys, passeios temáticos e competições provinciais e nacionais.</p>
+        </div>
+      </div>
+
+      <div class="actividade-card reveal" style="transition-delay:0.2s">
+        <div class="act-img">
+          🤲
+          <div class="act-img-bg b"></div>
+        </div>
+        <div class="act-overlay"></div>
+        <div class="act-content">
+          <span class="act-tag">Comunidade</span>
+          <div class="act-titulo">Acção Social</div>
+          <p class="act-desc">Contribuímos para o desenvolvimento das comunidades que visitamos, levando esperança e solidariedade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="linha-deco"></div>
+
+  <!-- ADESÃO -->
+  <section id="adesao">
+    <div class="adesao-inner">
+      <div class="adesao-info reveal">
+        <div class="section-label">Junta-te a nós</div>
+        <h2 class="section-title">Torna-te<br><span>Membro</span></h2>
+        <p class="secao-texto">
+          Partilhas o amor pelas motas e pelos valores que nos unem? O Clube O País tem as portas abertas para motoqueiros da Província do Moxico que queiram fazer parte desta irmandade.
+        </p>
+
+        <ul class="requisitos-list">
+          <li><span class="icon">▸</span>Possuir carta de condução de moto válida</li>
+          <li><span class="icon">▸</span>Ter moto própria em boas condições</li>
+          <li><span class="icon">▸</span>Comprometer-se com os valores do clube</li>
+          <li><span class="icon">▸</span>Período de Prospect antes de membro efectivo</li>
+          <li><span class="icon">▸</span>Pagar a quota mensal de adesão (1.500–2.000 Kz)</li>
+          <li><span class="icon">▸</span>Participar nos encontros e actividades regulares</li>
+        </ul>
+      </div>
+
+      <div class="adesao-form reveal" style="transition-delay:0.2s">
+        <div class="form-title">Pré-Inscrição</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-input" placeholder="Primeiro nome">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Apelido</label>
+            <input type="text" class="form-input" placeholder="Apelido">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Alcunha (opcional)</label>
+          <input type="text" class="form-input" placeholder="Como preferes ser chamado">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Telemóvel</label>
+          <input type="tel" class="form-input" placeholder="9XX XXX XXX">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Moto / Modelo</label>
+          <input type="text" class="form-input" placeholder="Ex: Honda CG 150">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Mensagem</label>
+          <textarea class="form-textarea" placeholder="Conta-nos um pouco sobre ti..."></textarea>
+        </div>
+
+        <button class="form-submit" id="submitBtn">Enviar Pré-Inscrição →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo"><span>O</span> País</span>
+        <p>Clube de Motas do Moxico. Unindo motoqueiros angolanos através do respeito, lealdade e irmandade na estrada.</p>
+        <div class="footer-lema">Um só povo, uma só nação</div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li>Sobre o Clube</li>
+          <li>Os Nossos Valores</li>
+          <li>Actividades</li>
+          <li>Tornar-me Membro</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Localização</h4>
+        <ul>
+          <li>Província do Moxico</li>
+          <li>República de Angola</li>
+          <li>Fundado em 2024</li>
+          <li>Lema: UM SÓ POVO</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Clube de Motas do Moxico — O País. Todos os direitos reservados.</span>
+      <span style="color:var(--vermelho)">🏍️ UM SÓ POVO, UMA SÓ NAÇÃO</span>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✓ Pré-inscrição enviada! Entraremos em contacto brevemente.</div>
+
+  <!-- JS -->
+  main.jsscript>
+</body>
+</html>
+
