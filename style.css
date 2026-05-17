@@ -13,7 +13,6 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -57,6 +56,13 @@ body::before {
     0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
   );
   pointer-events: none; z-index: 9000;
+}
+
+/* Barra de Angola no topo */
+.angola-strip {
+  height: 4px;
+  background: linear-gradient(90deg, #CC0000 50%, #000000 50%);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
 }
 
 /* NAVBAR */
@@ -113,6 +119,24 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
 .nav-links a:hover { color: var(--branco); }
 .nav-links a:hover::after { transform: scaleX(1); }
 
+/* Toggle (hambúrguer) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: none;
+  background: none;
+  border: none;
+  width: 44px; height: 44px;
+  align-items: center; justify-content: center;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--branco);
+  transition: all 0.3s;
+}
+
 /* HERO */
 #hero {
   min-height: 100vh;
@@ -120,7 +144,6 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   display: flex; align-items: center;
   overflow: hidden;
 }
-
 .hero-bg {
   position: absolute; inset: 0;
   background:
@@ -128,8 +151,6 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
     radial-gradient(ellipse 50% 50% at 10% 80%, rgba(212,160,23,0.06) 0%, transparent 50%),
     linear-gradient(160deg, #0A0A0A 0%, #111 40%, #0A0A0A 100%);
 }
-
-/* Grade diagonal */
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
@@ -140,14 +161,12 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   transform-origin: bottom center;
   opacity: 0.5;
 }
-
 .hero-content {
   position: relative; z-index: 10;
   padding: 0 5vw;
   padding-top: 70px;
   max-width: 900px;
 }
-
 .hero-tag {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.75rem;
@@ -165,7 +184,6 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   width: 40px; height: 1px;
   background: var(--dourado);
 }
-
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(5rem, 14vw, 12rem);
@@ -180,7 +198,6 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   font-style: normal;
   display: block;
 }
-
 .hero-linha {
   width: 80px; height: 4px;
   background: linear-gradient(90deg, var(--vermelho), var(--dourado));
@@ -188,7 +205,6 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   opacity: 0;
   animation: fadeUp 0.8s forwards 0.6s;
 }
-
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.7;
@@ -197,14 +213,12 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   opacity: 0;
   animation: fadeUp 0.8s forwards 0.8s;
 }
-
 .hero-ctas {
   display: flex; gap: 1rem; flex-wrap: wrap;
   margin-top: 3rem;
   opacity: 0;
   animation: fadeUp 0.8s forwards 1s;
 }
-
 .btn-vermelho {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700; font-size: 0.85rem;
@@ -233,7 +247,6 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
 }
 .btn-outline:hover { border-color: var(--dourado); color: var(--dourado); }
 
-/* Moto decorativa */
 .hero-moto {
   position: absolute; right: -2%; bottom: 0;
   width: min(55vw, 680px);
@@ -241,13 +254,10 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   animation: slideLeft 1.2s cubic-bezier(0.16,1,0.3,1) forwards 0.5s;
   z-index: 5;
 }
-
 .hero-moto svg {
   width: 100%; height: auto;
   filter: drop-shadow(-40px 0px 60px rgba(200,16,46,0.25));
 }
-
-/* Lema flutuante */
 .hero-lema {
   position: absolute;
   bottom: 2.5rem; left: 5vw;
@@ -257,6 +267,15 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   color: rgba(245,240,232,0.25);
   opacity: 0;
   animation: fadeUp 1s forwards 1.4s;
+}
+
+/* LINHA DECORATIVA */
+.linha-deco {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+  margin: 0;
+  opacity: 0.4;
 }
 
 /* STATS */
@@ -580,6 +599,7 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   color: var(--branco);
   margin-bottom: 2rem;
 }
+
 .form-group { margin-bottom: 1.4rem; }
 .form-label {
   display: block;
@@ -589,7 +609,7 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   color: var(--texto-secundario);
   margin-bottom: 0.5rem;
 }
-.form-input, .form-select, .form-textarea {
+.form-input, .form-textarea {
   width: 100%;
   background: var(--cinza-claro);
   border: 1px solid rgba(255,255,255,0.08);
@@ -601,9 +621,9 @@ nav.scrolled { border-bottom-color: rgba(200,16,46,0.3); }
   transition: border-color 0.3s;
   appearance: none;
 }
-.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--vermelho); }
-.form-select option { background: var(--cinza-claro); }
+.form-input:focus, .form-textarea:focus { border-color: var(--vermelho); }
 .form-textarea { resize: vertical; min-height: 100px; }
+
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
 .form-submit {
@@ -695,6 +715,23 @@ footer {
   flex-wrap: wrap; gap: 1rem;
 }
 
+/* TOAST */
+.toast {
+  position: fixed; bottom: 2rem; right: 2rem;
+  color: white;
+  padding: 1rem 1.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s;
+  z-index: 9999;
+  border-left: 3px solid var(--dourado);
+  background: #1a1a1a;
+}
+.toast.show { transform: none; opacity: 1; }
+
 /* ANIMAÇÕES */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -717,78 +754,58 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* LINHA DECORATIVA */
-.linha-deco {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
-  margin: 0;
-  opacity: 0.4;
-}
-
-/* TOAST */
-.toast {
-  position: fixed; bottom: 2rem; right: 2rem;
-  background: var(--verde, #1B5E20);
-  color: white;
-  padding: 1rem 1.5rem;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  transform: translateY(100px);
-  opacity: 0;
-  transition: all 0.4s;
-  z-index: 9999;
-  border-left: 3px solid var(--dourado);
-  background: #1a1a1a;
-}
-.toast.show { transform: none; opacity: 1; }
-
-/* MOBILE NAV TOGGLE */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: none;
-  background: none; border: none;
-}
-.nav-toggle span {
-  display: block;
-  width: 24px; height: 2px;
-  background: var(--branco);
-  transition: all 0.3s;
-}
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-  .hero-moto { display: none; }
-  .hero-title { font-size: 4.5rem; }
-}
-
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--preto); }
 ::-webkit-scrollbar-thumb { background: var(--vermelho); }
 
-/* Bandeira angola SVG inline */
-.angola-strip {
-  height: 4px;
-  background: linear-gradient(90deg, #CC0000 50%, #000000 50%);
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
-}
+/* ============
+   MOBILE MENU
+   ============ */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .hero-moto { display: none; }
+  .hero-title { font-size: 4.5rem; }
 
-/* Número de secção grande decorativo */
-.deco-number {
-  position: absolute;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(8rem, 20vw, 18rem);
-  color: rgba(255,255,255,0.018);
-  right: 4vw;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  line-height: 1;
-  letter-spacing: -0.05em;
+  /* dropdown fechado por defeito */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(212,160,23,0.15);
+
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 5vw;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  nav.menu-open .nav-links {
+    max-height: 420px;
+    padding: 10px 5vw 18px;
+  }
+
+  /* hambúrguer -> X */
+  nav.menu-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  nav.menu-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.menu-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 
