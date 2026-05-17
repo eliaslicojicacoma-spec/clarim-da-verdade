@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>O País — Clube de Motas do Moxico</title>
 
+  <!-- Fontes -->
+  https://fonts.googleapis.com
+  https://fonts.gstatic.com
   https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:ital,wght@0,300;0,400;1,300&display=swap
+
+  <!-- CSS -->
   style.css
 </head>
 
@@ -23,14 +28,23 @@
       <div class="badge"></div>
       <span>O</span> País
     </a>
-    <ul class="nav-links">
+
+    <ul class="nav-links" id="mobileMenu">
       <li>#sobreSobre</a></li>
       <li>#valoresValores</a></li>
       <li>#actividadesActividades</a></li>
       <li>#adesaoAderir</a></li>
       <li>#adesaoContacto</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle">
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+      aria-label="Abrir menu"
+      type="button"
+    >
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -43,7 +57,7 @@
     <div class="hero-content">
       <div class="hero-tag">Clube de Motas · Moxico · Angola</div>
       <h1 class="hero-title">
-        Clube<br />
+        Clube<br>
         <em>O País</em>
       </h1>
       <div class="hero-linha"></div>
@@ -335,7 +349,7 @@
           <textarea class="form-textarea" placeholder="Conta-nos um pouco sobre ti..."></textarea>
         </div>
 
-        <button class="form-submit" id="submitBtn">Enviar Pré-Inscrição →</button>
+        <button class="form-submit" id="submitBtn" type="button">Enviar Pré-Inscrição →</button>
       </div>
     </div>
   </section>
@@ -383,4 +397,3 @@
   main.jsscript>
 </body>
 </html>
-
